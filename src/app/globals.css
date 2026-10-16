@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-paper: #f5f2ea;
+  --color-card: #fffdf8;
+  --color-ink: #17150f;
+  --color-ink-2: #4a463c;
+  --color-muted: #847e70;
+  --color-line: #e3ddcf;
+  --color-lime: #c8f03c;
+  --color-lime-deep: #6b8a00;
+  --color-overdue: #d4442e;
+  --color-overdue-soft: #fbe6e1;
+  --color-paid: #1f7a4d;
+  --color-paid-soft: #e1f2e8;
+  --color-due: #9a6b00;
+  --color-due-soft: #fbf0d4;
 }
 
+/* inline: resolve the next/font variables where they're used, not at :root */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-instrument-serif), Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Fine paper grain behind the landing page */
+.grain {
+  background-image: radial-gradient(rgba(23, 21, 15, 0.06) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+input, textarea, select {
+  font: inherit;
 }
