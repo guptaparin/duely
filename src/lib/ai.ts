@@ -1,7 +1,7 @@
 import Groq from "groq-sdk";
 import { z } from "zod";
 
-const MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
+const MODEL = process.env.GROQ_MODEL || "openai/gpt-oss-120b";
 
 function client() {
   if (!process.env.GROQ_API_KEY) throw new Error("GROQ_API_KEY is not set");

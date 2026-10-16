@@ -21,7 +21,7 @@ Duely attacks each source of delay in turn:
 
 | Friction | Duely's answer |
 |---|---|
-| Writing invoices takes time | **AI invoice builder.** Describe the work in one sentence ("logo 15k, 3 banners at 2k, 18% GST, due in 10 days"). Groq's Llama 3.3 70B returns line items, tax and due date in JSON mode. Zod validates the output before it ever reaches the form. |
+| Writing invoices takes time | **AI invoice builder.** Describe the work in one sentence ("logo 15k, 3 banners at 2k, 18% GST, due in 10 days"). Groq's GPT-OSS 120B returns line items, tax and due date in JSON mode. Zod validates the output before it ever reaches the form. |
 | Paying is clunky | **Hosted payment page per invoice**, with Razorpay Checkout for UPI, cards, netbanking and wallets. The client needs no account. |
 | Chasing is awkward | **AI follow-ups whose tone escalates with lateness**: friendly at 0–6 days, firm at 7–20, final at 21+. Each one includes the exact amount, the invoice number and the pay link, and the freelancer can edit it before sending. |
 | Chasing is forgotten | **Auto-chase (Pro).** A daily cron job drafts and sends reminders for overdue invoices, at most once every three days per invoice. |

@@ -10,7 +10,7 @@ Duely sends invoices with a one-tap UPI / card payment link, then uses AI to wri
 
 | Workflow | How it works |
 |---|---|
-| **Invoice in one sentence** | Type *"logo 15k + 3 banners at 2k, 18% GST, due in 10 days"*. Groq (Llama 3.3 70B) returns structured line items, tax and due date, validated with Zod. |
+| **Invoice in one sentence** | Type *"logo 15k + 3 banners at 2k, 18% GST, due in 10 days"*. Groq (GPT-OSS 120B) returns structured line items, tax and due date, validated with Zod. |
 | **Hosted payment page** | Every invoice has an unguessable public link (`/pay/<uuid>`). The client pays through Razorpay Checkout (UPI, cards, netbanking, wallets). |
 | **Verified payments** | The server creates the Razorpay order, verifies the HMAC signature on return, and a webhook backs it up. Fulfilment is idempotent, so the invoice is marked paid exactly once. |
 | **AI follow-ups** | One click drafts a reminder whose tone escalates with lateness. Send it by SMTP, open it in your email app, or copy it to WhatsApp. Every draft is logged. |
@@ -25,7 +25,7 @@ Duely sends invoices with a one-tap UPI / card payment link, then uses AI to wri
 | Framework | **Next.js 15** (App Router, Server Components, Server Actions), TypeScript | One codebase for UI and API; server-first rendering keeps secrets off the client |
 | Styling | Tailwind CSS v4, self-hosted Geist + Instrument Serif | No runtime font calls; fast first paint |
 | Database & auth | **Supabase** (Postgres + Auth) with Row Level Security | Every table is locked to `auth.uid()`; the database enforces isolation |
-| AI | **Groq** (`llama-3.3-70b-versatile`) with JSON mode + Zod validation | Sub-second drafts; outputs are schema-checked before use |
+| AI | **Groq** (`openai/gpt-oss-120b`) with JSON mode + Zod validation | Sub-second drafts; outputs are schema-checked before use |
 | Payments | **Razorpay** Orders + Checkout + Webhooks | Native UPI for the Indian market; HMAC-SHA256 signature verification |
 | Email (optional) | Nodemailer over SMTP (e.g. Gmail App Password) | Free; falls back to `mailto:` when not configured |
 | Hosting & jobs | **Vercel** + Vercel Cron | Edge network, zero-config deploys, daily auto-chase |
