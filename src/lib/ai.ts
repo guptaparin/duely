@@ -108,6 +108,7 @@ export async function parseInvoiceText(text: string) {
   const system = `You turn a freelancer's quick description of work into invoice line items.
 Amounts are in Indian Rupees unless stated. "15k" = 15000, "1.2L" or "1.2 lakh" = 120000.
 If a lump sum is given, use quantity 1. If hours x rate is given, use quantity = hours.
+Each description is a short, capitalised name for the work (e.g. "Logo design", "Banner", "Consulting"). Never put amounts, quantities, rates or hours in the description.
 Extract due_in_days if mentioned ("net 15" = 15, "due next week" = 7), else null.
 Extract tax_rate if GST/tax % is mentioned, else null.
 Return JSON: {"items":[{"description":string,"quantity":number,"rate":number}],"due_in_days":number|null,"tax_rate":number|null,"notes":string|null}`;
