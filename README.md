@@ -2,7 +2,7 @@
 
 Duely sends invoices with a one-tap UPI / card payment link, then uses AI to write (and on paid plans, send) follow-ups to late clients in the right tone — friendly, firm, then final. A dashboard shows who owes you, how late they usually pay, and the cash you can expect in the next 30 days.
 
-> Built for **Galuxium Nexus V2**. Live demo: `https://<your-app>.vercel.app` · Demo video: `<link>`
+> Built for **Galuxium Nexus V2**. Live demo: `https://duely-one.vercel.app` · Demo video: `<link>`
 
 ---
 
