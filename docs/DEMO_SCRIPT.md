@@ -33,7 +33,7 @@ Pick a client and click **Create invoice & payment link**. Copy the link.
 Paste the link into the incognito window.
 > "This is what the client sees. No login, just pay."
 
-Click **Pay**. In Razorpay test checkout choose **UPI** and enter `success@razorpay`. The payment succeeds.
+Click **Pay**. In Razorpay test checkout choose **Netbanking**, pick any bank, then click **Success**. The payment succeeds. (Or use card `4100 2800 0000 1007`, any future expiry, any CVV.)
 
 Switch back to the dashboard and refresh.
 > "The signature is verified on the server, a webhook confirms it again, and the invoice is marked paid exactly once."

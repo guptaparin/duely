@@ -87,7 +87,7 @@ export default async function PayPage({ params }: { params: Promise<{ token: str
                   <p className="mt-3 text-center text-xs text-muted">UPI · Cards · Netbanking · Wallets — secured by Razorpay</p>
                   {testMode && (
                     <p className="mt-3 rounded-xl border border-dashed border-line p-3 text-center text-xs text-muted">
-                      Demo mode: no real money moves. Use UPI ID <span className="font-mono text-ink">success@razorpay</span> or
+                      Demo mode: no real money moves. Pay with Netbanking (pick any bank → Success) or
                       card <span className="font-mono text-ink">4100 2800 0000 1007</span>, any future expiry, any CVV.
                     </p>
                   )}

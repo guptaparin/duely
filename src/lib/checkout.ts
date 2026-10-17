@@ -14,7 +14,7 @@ interface RazorpayOptions {
   currency: string;
   name: string;
   description?: string;
-  prefill?: { name?: string; email?: string };
+  prefill?: { name?: string; email?: string; contact?: string };
   theme?: { color?: string };
   handler: (r: RazorpayResponse) => void;
   modal?: { ondismiss?: () => void };
@@ -48,6 +48,8 @@ export async function openCheckout(opts: Omit<RazorpayOptions, "handler" | "moda
   return new Promise<RazorpayResponse>((resolve, reject) => {
     const rzp = new window.Razorpay!({
       ...opts,
+      // Razorpay's docs sample number, so the payer never has to type a real phone number in the demo
+      prefill: { ...opts.prefill, contact: "9000090000" },
       theme: { color: "#17150f" },
       handler: resolve,
       modal: { ondismiss: () => reject(new Error("dismissed")) },

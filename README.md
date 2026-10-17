@@ -8,7 +8,7 @@ Duely sends invoices with a one-tap UPI / card payment link, then uses AI to wri
 
 - **Live app:** https://duely-one.vercel.app
 - **Demo login:** `judge@duely-demo.app` / `DuelyJudge-5546-HqN!`. It's pre-loaded with 4 clients and 9 invoices, 3 of them overdue, on the free Starter plan so you can try upgrading.
-- **Razorpay test payments** (test mode, no real money): UPI `success@razorpay`, or card `4100 2800 0000 1007` with any future expiry and any CVV.
+- **Razorpay test payments** (test mode, no real money): Netbanking (pick any bank → Success), or card `4100 2800 0000 1007` with any future expiry and any CVV.
 
 ---
 
