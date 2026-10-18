@@ -2,7 +2,7 @@
 
 Duely sends invoices with a one-tap UPI / card payment link, then uses AI to write (and on paid plans, send) follow-ups to late clients in the right tone — friendly, firm, then final. A dashboard shows who owes you, how late they usually pay, and the cash you can expect in the next 30 days.
 
-> Built for **Galuxium Nexus V2**. Live demo: `https://duely-one.vercel.app` · Demo video: `<link>`
+> Built for **Galuxium Nexus V2**. Live demo: [duely-one.vercel.app](https://duely-one.vercel.app) · [Demo video](https://youtu.be/2601oTBSPpQ) · [GitHub](https://github.com/guptaparin/duely)
 
 ## Try it
 
@@ -96,7 +96,7 @@ A trigger (`on_auth_user_created`) creates a `profiles` row for every new sign-u
 **Prerequisites:** Node 20+, plus free accounts on Supabase, Groq and Razorpay (test mode).
 
 ```bash
-git clone https://github.com/<you>/duely.git
+git clone https://github.com/guptaparin/duely.git
 cd duely
 npm install
 cp .env.example .env.local      # then fill in the values (see below)
@@ -111,7 +111,7 @@ npm run dev                     # http://localhost:3000
    - Put the key ID in both `RAZORPAY_KEY_ID` and `NEXT_PUBLIC_RAZORPAY_KEY_ID`, and the secret in `RAZORPAY_KEY_SECRET`.
 4. Optional: set the `SMTP_*` values to a Gmail address and a Google **App Password**. This lets Duely send emails itself.
 
-**Test payments:** use UPI `success@razorpay`, or card `4100 2800 0000 1007` with any future expiry and any CVV.
+**Test payments:** use Netbanking (pick any bank → **Success**), or card `4100 2800 0000 1007` with any future expiry and any CVV.
 
 ## Deploy (Vercel, free)
 
